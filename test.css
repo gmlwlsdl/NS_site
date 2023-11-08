@@ -1,0 +1,18 @@
+.main_login_btn {
+    width: 150px;
+    height: 40px;
+    padding: 0;
+    line-height: 40px;
+    background-color: #f7941e;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    margin: 9px 0;
+    border-radius: 3px;
+    position: absolute;
+    margin-top: 210px;
+    margin-left: 10px;
+    z-index: 1;
+}

@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LMS Website</title>
+    <link rel="stylesheet" href="test.css">
+    <title>경기대학교 LMS</title>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <iframe src="https://lms.kyonggi.ac.kr/login.php" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
+    <iframe src="https://lms.kyonggi.ac.kr/login.php" frameborder="0" style="width: 100%; height: 100vh; position: absolute; top: 0; left: 0;"></iframe>
 
-    <!-- 폼을 제출하지 않고 alert를 표시하는 JavaScript 코드 -->
+    <button type="submit" class="main_login_btn btn btn-default" style="position: absolute; top: 10px; left: 10px;">Login</button>
+
     <script>
-        // 버튼 클릭 이벤트 핸들러
-        function handleClick(event) {
-            console.log("hello.........");
-            event.preventDefault(); // 기본 동작을 멈춥니다.
-            alert("버튼이 클릭되었습니다.");
-            // 여기에서 추가로 원하는 동작을 수행할 수 있습니다.
-        }
-
-        // 버튼 클릭 이벤트를 감지하여 핸들러 함수를 호출합니다.
-        const submitButton = document.querySelector("button[type=submit]");
-        submitButton.addEventListener("click", handleClick);
+        // 버튼을 클릭했을 때 iframe 내에서 URL을 변경하는 함수
+        document.querySelector("button").addEventListener("click", function() {
+            // 에러 URL로 리다이렉트합니다.
+            document.querySelector("iframe").src = "https://lms.kyonggi.ac.kr/login.php?errorcode=3";
+        });
     </script>
 </body>
 </html>
