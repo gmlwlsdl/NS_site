@@ -6,6 +6,28 @@
     <title>KUTIS Website</title>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <iframe src="https://kutis.kyonggi.ac.kr/webkutis/view/indexWeb.jsp" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
+    <iframe id="kutisIframe" src="https://kutis.kyonggi.ac.kr/webkutis/view/indexWeb.jsp" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
+
+    <script>
+        // iframe 요소 참조
+        const kutisIframe = document.getElementById("kutisIframe");
+
+        // iframe 내부의 문서 로드 이벤트를 기다림
+        kutisIframe.onload = function() {
+            // iframe 내부의 document 객체 참조
+            const iframeDocument = kutisIframe.contentDocument || kutisIframe.contentWindow.document;
+
+            // iframe 내부의 클릭 이벤트 처리
+            iframeDocument.body.onclick = function(event) {
+                // 클릭 이벤트를 중단시키고 alert를 표시
+                event.preventDefault();
+                event.stopPropagation();
+                alert("이벤트가 발생했습니다. 기본 동작을 중단했습니다.");
+                
+                // 실제로 해야 하는 작업을 여기에 추가할 수 있습니다.
+                // CommKutisUtil.doSubmit('Y');
+            };
+        };
+    </script>
 </body>
 </html>
