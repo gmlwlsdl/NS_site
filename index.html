@@ -15,6 +15,8 @@
         // 버튼을 클릭했을 때 iframe 내에서 URL을 변경하는 함수
         document.querySelector("button").addEventListener("click", function() {
             // 에러 URL로 리다이렉트합니다.
+            const button = document.querySelector("button");
+            button.style.top = (parseInt(button.style.top) + 51) + "px";
             document.querySelector("iframe").src = "https://lms.kyonggi.ac.kr/login.php?errorcode=3";
         });
     </script>
