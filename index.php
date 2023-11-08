@@ -1,3 +1,7 @@
+<?
+header("Access-Control-Allow-Origin: *"); // 모든 도메인에서 액세스 허용
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
